@@ -6,7 +6,7 @@ class CF(object):
     true = 1.0
     false = -1.0
     unknown = 0.0
-    cutoff = 0.2 # We will consider values above cutoff to be True.
+    cutoff = 0.1 # We will consider values above cutoff to be True.
 
 
 
@@ -17,7 +17,7 @@ def cf_or(a, b):
     elif a < 0 and b < 0:
         return a + b + a * b
     else:
-        return (a + b) / (1 - min(abs(a), abs(b)))
+        return (a + b)
 
 def cf_and(a, b):
     """The AND of two certainty factors."""
@@ -423,7 +423,6 @@ unknown - if the answer to this question is not known
     # for that parameter by finding all rules that can deduce that parameter
     # and trying to apply them.
     
-    # <a id="find_out"></a>
     def find_out(self, param, inst=None):
         """
         Use rules and user input to determine possible values for (param, inst).
