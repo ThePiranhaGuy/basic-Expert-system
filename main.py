@@ -10,7 +10,7 @@ def report_findings(findings):
             if len(possibilities)<1:
                 print("None applicable")
                 break
-            print('%s: %s' % (param, ', '.join(possibilities)))
+            print('%s with cf= %s' % (param, ', '.join(possibilities)))
         
 def main():
     sh = Shell()
