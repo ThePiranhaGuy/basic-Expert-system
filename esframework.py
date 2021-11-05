@@ -1,5 +1,5 @@
 import logging
-logging.basicConfig(filename="logs",level=logging.DEBUG,filemode='w')
+logging.basicConfig(filename="logs.log",level=logging.DEBUG,filemode='w')
 
 class CF(object):
     """Collect important certainty factors in a single namespace."""
