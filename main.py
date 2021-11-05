@@ -1,9 +1,9 @@
 from knowledgebase import *
 from esframework import *
 
-def report_findings(findings):
-    for inst, result in findings.items():
-        print('Findings for %s-%d:' % (inst[0], inst[1]))
+def report(output):
+    for inst, result in output.items():
+        print('Results for %s-%d:' % (inst[0], inst[1]))
         
         for param, vals in result.items():
             possibilities = ['%s: %f' % (val[0], val[1]) for val in vals.items()]
@@ -17,7 +17,7 @@ def main():
     define_contexts(sh)
     define_params(sh)
     define_rules(sh)
-    report_findings(sh.execute(['material']))
+    report(sh.execute(['material']))
     
 if __name__=="__main__":
     main()
