@@ -130,22 +130,6 @@ def update_cf(values, param, inst, val, cf):
     get_vals(values, param, inst)[val] = updated
     
 
-# -----------------------------------------------------------------------------
-# <a id="rules"></a>
-## Rules
-    
-# *Rules* represent expert knowledge in Emycin.  They are used to combine known
-# facts in the system with user input to deduce new facts.  Each rule has some
-# premises, some conclusions, and an associate certainty factor of the rule
-# itself.  They look like
-#    
-#     IF (premises) THEN (rule certainty) (conclusions).
-#    
-# A rule can be applied if and only if its premises hold; this is tested by
-# evaluating all of the premises to determine their certainty.  If the AND of
-# all the certainties of the premises is considered True, then the conclusion
-# conditions can result in new known values.
-
 class Rule(object):
     
     """
