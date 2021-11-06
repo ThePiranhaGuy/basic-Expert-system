@@ -1,5 +1,4 @@
-import logging
-logging.basicConfig(filename="logs.log",level=logging.DEBUG,filemode='w')
+
 
 class CF(object):
     """Collect important certainty factors in a single namespace."""
@@ -86,9 +85,6 @@ def eval_condition(condition, values, find_out=None):
     """
     To determine the certainty factor of the condition (param, inst, op, val)
     """
-    logging.debug('Evaluating condition [%s] (find_out %s)' %
-                  (print_condition(condition), 'ENABLED' if find_out else 'DISABLED'))
-    
     param, inst, op, val = condition
     if find_out:
         find_out(param, inst) # get more values for this param
@@ -96,9 +92,6 @@ def eval_condition(condition, values, find_out=None):
     for known_val,cf in values.items():
         if op(known_val,val):
             total = cf_or(total,cf)
-    
-    logging.debug('Condition [%s] has a certainty factor of %f' %(print_condition(condition), total))
-    
     return total
 
 def print_condition(condition):
@@ -202,9 +195,6 @@ class Rule(object):
             cf = eval_condition(premise, vals) # don't pass find_out, just use rules
             if cf_false(cf):
                 return CF.false
-                        
-        logging.debug('Determining applicability of rule (\n%s\n)' % self)
-        
         # Evaluate each premise (calling find_out to apply reasoning) to
         # determine if the rule can be applied.
         total_cf = CF.true
@@ -229,21 +219,14 @@ class Rule(object):
         if track:
             track(self)
         
-        logging.debug('Attempting to apply rule (\n%s\n)' % self)
-
         # Test the applicability of the rule (the AND of all its premises).
         cf = self.cf * self.applicable(values, instances, find_out)
         if not cf_true(cf):
-            logging.debug('Rule (\n%s\n) is not applicable (%f certainty)' % (self, cf))
             return False
-        
-        logging.info('Applying rule (\n%s\n) with certainty %f' % (self, cf))
         
         # Use each conclusion to derive new values and update certainty factors.
         for conclusion in self.conclusions(instances):
             param, inst, op, val = conclusion
-            logging.info('Concluding [%s] with certainty %f' %
-                         (print_condition(conclusion), cf))
             update_cf(values, param, inst, val, cf)
         
         return True
@@ -347,8 +330,6 @@ unknown - if the answer to this question is not known
         
         if (param, inst) in self.asked:
             return
-        logging.debug('Getting user input for %s of %s' % (param, inst))
-        
         self.asked.add((param, inst))
         while True:
             resp = self.read('What is the %s of %s-%d? ' % (param, inst[0], inst[1]))
@@ -445,8 +426,6 @@ unknown - if the answer to this question is not known
                              self.get_rules(param), self.find_out,
                              self._set_current_rule)
 
-        logging.debug('Finding out %s of %s' % (param, inst))
-
         # Some parameters are ask_first parameters, which means we should ask
         # the user for their values before applying rules.
         if self.get_param(param).ask_first:
@@ -463,8 +442,6 @@ unknown - if the answer to this question is not known
         The system attempts to gather the initial data specified for the context
         before attempting to gather the goal data.
         """
-        
-        logging.info('Beginning data-gathering for %s' % ', '.join(context_names))
         
         self.write('Beginning execution. For help answering questions, type "help".')
         self.clear()
