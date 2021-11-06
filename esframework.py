@@ -20,7 +20,7 @@ def cf_or(a, b):
 
 def cf_and(a, b):
     """The AND of two certainty factors."""
-    return min(a, b)
+    return a*b
 
 def is_cf(x):
     """Is x a valid certainty factor; ie, is (false <= x <= true)?"""
@@ -141,7 +141,7 @@ class Rule(object):
     def __str__(self):
         prems = map(print_condition, self.raw_premises)
         concls = map(print_condition, self.raw_conclusions)
-        templ = 'RULE %d\nIF\n\t%s\nTHEN %f\n\t%s'
+        templ = 'RULE %d states\nIF\n\t%s\nTHEN %f\n\t%s'
         return templ % (self.num, '\n\t'.join(prems), self.cf, '\n\t'.join(concls))
     
     def clone(self):
@@ -410,7 +410,7 @@ unknown - if the answer to this question is not known
         Returns True if a value was found, and False otherwise.
         """
         inst = inst or self.current_inst
-
+        
         if (param, inst) in self.known: # return early if we already know this value
             return True
         

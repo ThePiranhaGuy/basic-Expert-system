@@ -3,7 +3,7 @@ from esframework import *
 
 def report(output):
     for inst, result in output.items():
-        print('Results for %s-%d:' % (inst[0], inst[1]))
+        print('===========\nResults for %s-%d:' % (inst[0], inst[1]))
         
         for param, vals in result.items():
             possibilities = ['%s: %f' % (val[0], val[1]) for val in vals.items()]
