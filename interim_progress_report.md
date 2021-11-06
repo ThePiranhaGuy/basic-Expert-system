@@ -1,6 +1,6 @@
 # 1. Designing a rule-based Expert System
 ## Problem Description
-    To design a rule based Expert System capable of deduction and explaining rulesets and designing a suitable shell to use the system.
+    Using a Rule-based expert system to decide what material is suitable for building a beam.
 ## Formal Problem Statement
 - ### Purpose:
     To accept data for ultimate stress, relative density and cost data and return what material is suitable for making a beam given ultimate stress, relative density and cost data.
