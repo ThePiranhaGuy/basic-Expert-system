@@ -46,7 +46,7 @@ The basic functioning of the program was inspired by emycin and hence it also us
 
 To operate on the user provided data, the global database also contains various rules consisting of one or more conditions/propositions which operates on the certainty factors.
 
-> Operations on certainity factor such as `or` and `and` are done using simple Bayes Theorem in order to keep the program less complicated.
+> Operations on certainty factor such as `or` and `and` are done using simple Bayes Theorem in order to keep the program less complicated.
 
 It is also capable of backward chaining i.e. the programs rejects a possibility whenever the certainty of it shows that it is absolutely false.
 
@@ -71,9 +71,9 @@ The shell is capable of answering which rule is being considered and also explai
     - Documentation
 3. Aryan Tripathi {20MF3IM24}
     - Research
-    - Certainity factors and Rules implementation
+    - Certainty factors and Rules implementation
     - Presentation video
 
 ---
 ## Link for the video presentation:
-[www.youtube.com](https://www.youtube.com)
+[https://youtu.be/PjXYe-fM8JM](https://youtu.be/PjXYe-fM8JM)
