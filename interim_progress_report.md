@@ -1,3 +1,18 @@
+# Project on Expert Systems
+### Group Composition:
+1. 
+    **Name:** Kinjawl Bhattacharyya  
+    **Roll No.:** 20EE10090  
+    Electrical Engineering Department
+2.  **Name:** Arunava Sarkar
+    **Roll No.:** 20MF10047  
+    Mechanical Engineering Department
+3.  **Name:** Aryan Tripathi  
+    **Roll No.:** 20MF3IM24   
+    Mechanical Engineering Department
+
+
+
 # 1. Designing a rule-based Expert System
 ## Problem Description
     Using a Rule-based expert system to decide what material is suitable for building a beam.
@@ -43,3 +58,21 @@ The shell is capable of answering which rule is being considered and also explai
 - [Principles of Rule based expert systems - Standford Univ.](http://i.stanford.edu/pub/cstr/reports/cs/tr/82/926/CS-TR-82-926.pdf)
 - [https://www.sciencedirect.com/topics/computer-science/certainty-factor](https://www.sciencedirect.com/topics/computer-science/certainty-factor)
 - Paradigms of AI programming - Peter Norvig
+
+---
+## Responsibility of each Group Member
+1. Kinjawl Bhattacharyya {20EE10090}
+    - Research
+    - Implementation of general knowledge base and related modules in framework
+    - Documentation
+2. Arunava Sarkar {20MF10047}
+    - Research
+    - Implementation of Shell 
+    - Documentation
+3. Aryan Tripathi {20MF3IM24}
+    - Research
+    - Certainity factors and Rules implementation
+    - Presentation video
+
+---
+## [Link for the video presentation](www.youtube.com)
