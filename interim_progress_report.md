@@ -4,7 +4,7 @@
     **Name:** Kinjawl Bhattacharyya  
     **Roll No.:** 20EE10090  
     Electrical Engineering Department
-2.  **Name:** Arunava Sarkar
+2.  **Name:** Arunava Sarkar  
     **Roll No.:** 20MF10047  
     Mechanical Engineering Department
 3.  **Name:** Aryan Tripathi  
