@@ -76,4 +76,4 @@ The shell is capable of answering which rule is being considered and also explai
 
 ---
 ## Link for the video presentation:
-[Go to video at youtube.com](www.youtube.com)
+[www.youtube.com](www.youtube.com)
